@@ -10,6 +10,26 @@ Check the following when creating a pull request:
 
 <!-- Describe the changes that are being made in this pull request  -->
 
+## 🚀 Deployment
+
+<!--
+This section is read at release time — write it for the person deploying, and
+keep it updated as the PR evolves. It is scraped by the release-preparation
+tooling, so keep the heading exactly as-is.
+
+Delete whichever lines do not apply. If the change deploys completely clean,
+keep ONLY the "None" line below.
+-->
+
+**None — deploys clean** (no migrations, commands, env vars or dependencies)
+
+- **Migrations**: <!-- migration names; anything beyond a standard `php artisan migrate`? -->
+- **Seeders / commands**: <!-- exact copy-pasteable commands, in order, incl. prompts and answers -->
+- **Env vars**: <!-- KEY=example value + which environments -->
+- **Cross-repo order**: <!-- e.g. deploy giftify-back-office#470 BEFORE this -->
+- **Risks / rollback**: <!-- what could break, how to verify it works, how to undo -->
+- **Owner**: <!-- @github-handle who must be present/reachable when this is released -->
+
 ## Checklist
 
 ### Coding guidelines
@@ -18,7 +38,7 @@ Check the following when creating a pull request:
 - [ ] Commits are atomic and rebased — each builds green and carries its own tests
 
 ### Code quality
-- [ ] I have performed a self-review of my on code.
+- [ ] I have performed a self-review of my own code.
 - [ ] I have added tests that prove my fix is effective or that my feature works.
 - [ ] I have added tests to cover edge cases.
 - [ ] All new and existing tests passed.
@@ -27,6 +47,4 @@ Check the following when creating a pull request:
 - [ ] I have updated the relevant documentation where needed.
 
 ### Deployment
-- [ ] My changes require a migration or other data-related update.
-  - [ ] I have applied the necessary migration or data updates.
-- [ ] I have updated the deployment instructions if necessary.
+- [ ] The 🚀 Deployment section above is accurate and complete (or states "None — deploys clean").
