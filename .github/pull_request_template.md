@@ -17,12 +17,17 @@ This section is read at release time — write it for the person deploying, and
 keep it updated as the PR evolves. It is scraped by the release-preparation
 tooling, so keep the heading exactly as-is.
 
-Delete whichever lines do not apply. If the change deploys completely clean,
-keep ONLY the "None" line below.
+Two different claims — don't conflate them:
+* Nothing to RUN and nothing to KNOW → keep ONLY the "None" line below.
+* Nothing to run but something to know (a risk, a rollback note, an adjacent
+  gap) → DELETE the "None" line, keep "No deploy steps" plus the relevant
+  bullets. A releaser skimming "None" must be safe to stop reading.
+Delete whichever remaining lines do not apply.
 -->
 
-**None — deploys clean** (no migrations, commands, env vars or dependencies)
+**None — deploys clean** (nothing to run, nothing to know)
 
+- **No deploy steps** — nothing to run (no migrations, commands or env vars) <!-- keep only alongside Risks/Owner bullets -->
 - **Migrations**: <!-- migration names; anything beyond a standard `php artisan migrate`? -->
 - **Seeders / commands**: <!-- exact copy-pasteable commands, in order, incl. prompts and answers -->
 - **Env vars**: <!-- KEY=example value + which environments -->
