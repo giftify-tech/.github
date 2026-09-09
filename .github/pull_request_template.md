@@ -44,6 +44,12 @@ Delete whichever remaining lines do not apply.
 
 ### Code quality
 - [ ] I have performed a self-review of my own code.
+<!-- Adversarial review: required for risky or complex changes — money movement, shared-state
+     writers, legacy predicates/columns, auth, data-transforming migrations, or logic
+     intricate enough that bugs could hide in it.
+     Keep ONE of the next two lines and delete the other. -->
+- [ ] Adversarial review run and findings addressed ([when & how](https://github.com/giftify-tech/giftify-agent-docs/blob/main/coding-guidelines/guides/adversarial-review.md))
+- [ ] Adversarial review not required — this change is neither risky nor complex
 - [ ] I have added tests that prove my fix is effective or that my feature works.
 - [ ] I have added tests to cover edge cases.
 - [ ] All new and existing tests passed.
