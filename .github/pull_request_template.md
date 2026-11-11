@@ -8,7 +8,22 @@ Check the following when creating a pull request:
 
 ## Description
 
-<!-- Describe the changes that are being made in this pull request  -->
+<!--
+Use the required structure from
+https://github.com/giftify-tech/giftify-agent-docs/blob/main/development/guides/pr-descriptions.md:
+
+### Feature overview
+Explain the overall feature, problem, or outcome in 2-5 short lines.
+
+### Changes
+- Summarize meaningful implementation changes with concise, logically grouped bullets.
+
+### Self-review
+Outcome of reviewing this diff against the coding guidelines
+(https://github.com/giftify-tech/giftify-agent-docs/blob/main/coding-guidelines/guides/code-review-agent-playbook.md).
+One bullet per finding — `🟡 Guideline — what, where — fixed` or `— left because …` — or the single
+line "No findings". Evidence the review happened, not a promise that it did.
+-->
 
 ## 🚀 Deployment
 
@@ -38,15 +53,16 @@ Delete whichever remaining lines do not apply.
 ## Checklist
 
 ### Coding guidelines
-- [ ] I have reviewed my changes against the [coding guidelines](https://github.com/giftify-tech/giftify-agent-docs/tree/main/coding-guidelines)
-      (or had an agent check them — see the [code review playbook](https://github.com/giftify-tech/giftify-agent-docs/blob/main/coding-guidelines/guides/code-review-agent-playbook.md))
-- [ ] Commits are atomic and rebased — each builds green and carries its own tests
+- [ ] The `### Self-review` section above records the outcome of reviewing this diff against the [coding guidelines](https://github.com/giftify-tech/giftify-agent-docs/tree/main/coding-guidelines)
+      (run it yourself or with an agent — [code review playbook](https://github.com/giftify-tech/giftify-agent-docs/blob/main/coding-guidelines/guides/code-review-agent-playbook.md)); 🔴/🟡 findings are fixed, 🟢 left are listed with a reason
+- [ ] I reviewed the complete branch history: each commit contains one logical concept, leaves the codebase working, and carries its relevant tests
+- [ ] Fixes, forgotten files, and trailing test commits are folded into the commit they amend
 
 ### Code quality
 - [ ] I have performed a self-review of my own code.
-<!-- Adversarial review: required for risky or complex changes — money movement, shared-state
-     writers, legacy predicates/columns, auth, data-transforming migrations, or logic
-     intricate enough that bugs could hide in it.
+<!-- Adversarial review: required when the diff hits any trigger listed in
+     coding-guidelines/guides/adversarial-review.md#when-one-is-required (money movement,
+     shared-state writers, legacy data, auth, data-transforming migrations, …).
      Keep ONE of the next two lines and delete the other. -->
 - [ ] Adversarial review run and findings addressed ([when & how](https://github.com/giftify-tech/giftify-agent-docs/blob/main/coding-guidelines/guides/adversarial-review.md))
 - [ ] Adversarial review not required — this change is neither risky nor complex
